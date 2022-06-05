@@ -1,0 +1,55 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+/* 
+COLORS: 
+
+Light: #B4E197
+Medium: #83BD75
+Dark: #4E944F
+
+*/
+
+/* Basic reset */
+
+* {
+  margin: 0;
+  padding: 0;
+
+  /* Changes box-model so that borders & paddings are not added to total width & height */
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+
+  /* White border around entire page */
+  /* padding: 30px; */
+}
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+      to left bottom,
+      rgba(78, 148, 79, 0.8),
+      rgba(181, 225, 151, 0.8)
+    ),
+    url(../img/hero.jpg);
+  background-size: cover;
+
+  /* Top of image not cropped when viewport resized */
+  background-position: top;
+
+  /* Specify corners we want to remain visible. All coordinates are in relation to the first point we define (the reference point) and we start at the top left corner.  */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
