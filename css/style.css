@@ -68,6 +68,7 @@ body {
 
 .text-box {
   position: absolute;
+  text-align: center;
 
   /* Center box in middle of parent <header> container. Note that top & left properties center the box starting from the top and left starting points of the child element. */
   top: 50%;
@@ -85,6 +86,7 @@ body {
 
   /* fix animation shake */
   backface-visibility: hidden;
+  margin-bottom: 60px;
 }
 
 .heading-primary-main {
@@ -144,4 +146,37 @@ body {
     opacity: 1;
     transform: translate(0);
   }
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+
+  /* remove overlap */
+  display: inline-block;
+  border-radius: 100px;
+
+  /* transition is always applied on initial state and applies to all other states */
+  transition: all 0.2s;
+
+  /* since inline-block elements are treated like text, we use text-align: center on the parent element (.text-box) to center our button */
+}
+
+.btn:hover {
+  /* tranlate Y goes from top to bottom in CSS (opposite of cartesian plane) */
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  /* translation here is in relation to original state */
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
 }
