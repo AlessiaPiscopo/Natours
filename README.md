@@ -4,7 +4,7 @@
 
 A website built with HTML & CSS, based on Jonas Schmedtmann's [Advanced CSS & Sass Course](https://www.udemy.com/course/advanced-css-and-sass/) on Udemy.
 
-The purpose of this project is to master my CSS skills and build creativity, using modern techniques with a focus on responsive design
+The purpose of this project is to practice using modern CSS techniques and responsive design principles.
 
 ### Course Topics & Learning Objectives
 
