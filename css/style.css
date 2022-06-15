@@ -1,30 +1,10 @@
-/*
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
-*/
-
-/* 
-COLORS: 
-
-Light: #B4E197
-Medium: #83BD75
-Dark: #4E944F
-
-*/
-
-/* Basic reset */
-
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-
   /* Changes box-model so that borders & paddings are not added to total width & height */
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 body {
   font-family: "Lato", sans-serif;
@@ -32,174 +12,124 @@ body {
   font-size: 16px;
   line-height: 1.7;
   color: #777;
-
   /* White border around entire page */
-  /* padding: 30px; */
-}
+  /* padding: 30px; */ }
 
 .header {
   height: 95vh;
-  background-image: linear-gradient(
-      to left bottom,
-      rgba(78, 148, 79, 0.8),
-      rgba(181, 225, 151, 0.8)
-    ),
-    url(../img/hero.jpg);
+  background-image: linear-gradient(to left bottom, rgba(180, 225, 151, 0.8), rgba(78, 148, 79, 0.8)), url(../img/hero.jpg);
   background-size: cover;
-
   /* Top of image not cropped when viewport resized */
   background-position: top;
   position: relative;
-
   /* Specify corners we want to remain visible. All coordinates are in relation to the first point we define (the reference point) and we start at the top left corner.  */
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-}
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
 
 .header__logo-box {
   position: absolute;
   top: 40px;
-  left: 40px;
-}
+  left: 40px; }
 
 .header__logo {
   /* When we only set a height or width, the browser sets the width or height respectively */
-  height: 35px;
-}
+  height: 35px; }
 
 .header__text-box {
   position: absolute;
   text-align: center;
-
   /* Center box in middle of parent <header> container. Note that top & left properties center the box starting from the top and left starting points of the child element. */
   top: 50%;
   left: 50%;
-
   /* We need to center the container from its x-y center. So, we shift this using transform & translate. These values are no longer in relation to the parent element. They are relative to the element itself. */
-  transform: translate(-50%, -40%);
-}
+  transform: translate(-50%, -40%); }
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
-
   /* block elements occupy entire width they have available & create line breaks before & after each element */
-
   /* fix animation shake */
   backface-visibility: hidden;
-  margin-bottom: 60px;
-}
+  margin-bottom: 60px; }
 
 .heading-primary--main {
   display: block;
   font-size: 60px;
   font-weight: 400;
   letter-spacing: 35px;
-
   animation-name: moveInLeft;
   animation-duration: 1s;
   animation-timing-function: ease-out;
-
   /* 
-    animation-delay: 3s; 
-    animation-iteration-count: 3;
-  */
-}
+      animation-delay: 3s; 
+      animation-iteration-count: 3;
+    */ }
 
 .heading-primary--sub {
   display: block;
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 17.4px;
-
   /* shorthand syntax */
-  animation: moveInRight 1s ease-out;
-}
+  animation: moveInRight 1s ease-out; }
 
 /* browsers are optimized to animate 2 properties: opacity & transform */
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-100px);
-  }
-
+    transform: translateX(-100px); }
   80% {
-    transform: translateX(10px);
-  }
-
+    transform: translateX(10px); }
   100% {
     opacity: 1;
-    transform: translate(0);
-  }
-}
+    transform: translate(0); } }
 
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(100px);
-  }
-
+    transform: translateX(100px); }
   80% {
-    transform: translateX(-10px);
-  }
-
+    transform: translateX(-10px); }
   100% {
     opacity: 1;
-    transform: translate(0);
-  }
-}
+    transform: translate(0); } }
 
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(30px);
-  }
-
+    transform: translateY(30px); }
   80% {
-    transform: translateX(-10px);
-  }
-
+    transform: translateX(-10px); }
   100% {
     opacity: 1;
-    transform: translate(0);
-  }
-}
+    transform: translate(0); } }
 
 .btn:link,
 .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 15px 40px;
-
   /* remove overlap */
   display: inline-block;
   border-radius: 100px;
-
   /* transition is always applied on initial state and applies to all other states */
   transition: all 0.2s;
-
   /* since inline-block elements are treated like text, we use text-align: center on the parent element (.text-box) to center our button */
-
   position: relative;
-
-  backface-visibility: hidden;
-}
+  backface-visibility: hidden; }
 
 .btn:hover {
   /* tranlate Y goes from top to bottom in CSS (opposite of cartesian plane) */
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
 
 .btn:active {
   /* translation here is in relation to original state */
   transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
 
 .btn--white {
   background-color: #fff;
-  color: #777;
-}
+  color: #777; }
 
 .btn::after {
   content: "";
@@ -211,21 +141,16 @@ body {
   top: 0;
   left: 0;
   z-index: -1;
-
-  transition: all 0.4s;
-}
+  transition: all 0.4s; }
 
 .btn--white::after {
-  background-color: #fff;
-}
+  background-color: #fff; }
 
 .btn:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
   /* set opacity to 0 for fade-out */
-  opacity: 0;
-}
+  opacity: 0; }
 
 .btn--animated {
   animation: moveInBottom 0.5 ease-out 0.75s;
-  animation-fill-mode: backwards;
-}
+  animation-fill-mode: backwards; }

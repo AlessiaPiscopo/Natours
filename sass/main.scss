@@ -3,6 +3,7 @@ $color-primary-light: #b4e197;
 $color-primary-dark: #4e944f;
 
 $color-grey-dark: #777;
+$color-white: #fff;
 
 *,
 *::after,
@@ -67,7 +68,7 @@ body {
 }
 
 .heading-primary {
-  color: #fff;
+  color: $color-white;
   text-transform: uppercase;
 
   /* block elements occupy entire width they have available & create line breaks before & after each element */
@@ -185,7 +186,7 @@ body {
 }
 
 .btn--white {
-  background-color: #fff;
+  background-color: $color-white;
   color: $color-grey-dark;
 }
 
@@ -204,7 +205,7 @@ body {
 }
 
 .btn--white::after {
-  background-color: #fff;
+  background-color: $color-white;
 }
 
 .btn:hover::after {
