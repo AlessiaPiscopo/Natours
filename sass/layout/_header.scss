@@ -1,0 +1,40 @@
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+      to left bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/hero.jpg);
+  background-size: cover;
+
+  /* Top of image not cropped when viewport resized */
+  background-position: top;
+  position: relative;
+
+  /* Specify corners we want to remain visible. All coordinates are in relation to the first point we define (the reference point) and we start at the top left corner.  */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  &__logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+  }
+
+  &__logo {
+    /* When we only set a height or width, the browser sets the width or height respectively */
+    height: 35px;
+  }
+
+  &__text-box {
+    position: absolute;
+    text-align: center;
+
+    /* Center box in middle of parent <header> container. Note that top & left properties center the box starting from the top and left starting points of the child element. */
+    top: 50%;
+    left: 50%;
+
+    /* We need to center the container from its x-y center. So, we shift this using transform & translate. These values are no longer in relation to the parent element. They are relative to the element itself. */
+    transform: translate(-50%, -40%);
+  }
+}

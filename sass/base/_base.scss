@@ -1,0 +1,20 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+
+  /* Changes box-model so that borders & paddings are not added to total width & height */
+  box-sizing: border-box;
+}
+
+html {
+  // this defines what 1rem is
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  /* White border around entire page */
+  /* padding: 30px; */
+}
