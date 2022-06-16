@@ -24,24 +24,21 @@ body {
   position: relative;
   /* Specify corners we want to remain visible. All coordinates are in relation to the first point we define (the reference point) and we start at the top left corner.  */
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
-
-.header__logo-box {
-  position: absolute;
-  top: 40px;
-  left: 40px; }
-
-.header__logo {
-  /* When we only set a height or width, the browser sets the width or height respectively */
-  height: 35px; }
-
-.header__text-box {
-  position: absolute;
-  text-align: center;
-  /* Center box in middle of parent <header> container. Note that top & left properties center the box starting from the top and left starting points of the child element. */
-  top: 50%;
-  left: 50%;
-  /* We need to center the container from its x-y center. So, we shift this using transform & translate. These values are no longer in relation to the parent element. They are relative to the element itself. */
-  transform: translate(-50%, -40%); }
+  .header__logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px; }
+  .header__logo {
+    /* When we only set a height or width, the browser sets the width or height respectively */
+    height: 35px; }
+  .header__text-box {
+    position: absolute;
+    text-align: center;
+    /* Center box in middle of parent <header> container. Note that top & left properties center the box starting from the top and left starting points of the child element. */
+    top: 50%;
+    left: 50%;
+    /* We need to center the container from its x-y center. So, we shift this using transform & translate. These values are no longer in relation to the parent element. They are relative to the element itself. */
+    transform: translate(-50%, -40%); }
 
 .heading-primary {
   color: #fff;
@@ -50,27 +47,25 @@ body {
   /* fix animation shake */
   backface-visibility: hidden;
   margin-bottom: 60px; }
-
-.heading-primary--main {
-  display: block;
-  font-size: 60px;
-  font-weight: 400;
-  letter-spacing: 35px;
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  /* 
-      animation-delay: 3s; 
-      animation-iteration-count: 3;
-    */ }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 17.4px;
-  /* shorthand syntax */
-  animation: moveInRight 1s ease-out; }
+  .heading-primary--main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* 
+        animation-delay: 3s; 
+        animation-iteration-count: 3;
+      */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
+    /* shorthand syntax */
+    animation: moveInRight 1s ease-out; }
 
 /* browsers are optimized to animate 2 properties: opacity & transform */
 @keyframes moveInLeft {
@@ -103,8 +98,7 @@ body {
     opacity: 1;
     transform: translate(0); } }
 
-.btn:link,
-.btn:visited {
+.btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 15px 40px;
@@ -121,6 +115,10 @@ body {
   /* tranlate Y goes from top to bottom in CSS (opposite of cartesian plane) */
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    /* set opacity to 0 for fade-out */
+    opacity: 0; }
 
 .btn:active {
   /* translation here is in relation to original state */
@@ -130,6 +128,8 @@ body {
 .btn--white {
   background-color: #fff;
   color: #777; }
+  .btn--white::after {
+    background-color: #fff; }
 
 .btn::after {
   content: "";
@@ -142,14 +142,6 @@ body {
   left: 0;
   z-index: -1;
   transition: all 0.4s; }
-
-.btn--white::after {
-  background-color: #fff; }
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  /* set opacity to 0 for fade-out */
-  opacity: 0; }
 
 .btn--animated {
   animation: moveInBottom 0.5 ease-out 0.75s;

@@ -4,6 +4,7 @@ $color-primary-dark: #4e944f;
 
 $color-grey-dark: #777;
 $color-white: #fff;
+$color-black: #000;
 
 *,
 *::after,
@@ -42,29 +43,29 @@ body {
 
   /* Specify corners we want to remain visible. All coordinates are in relation to the first point we define (the reference point) and we start at the top left corner.  */
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-}
 
-.header__logo-box {
-  position: absolute;
-  top: 40px;
-  left: 40px;
-}
+  &__logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+  }
 
-.header__logo {
-  /* When we only set a height or width, the browser sets the width or height respectively */
-  height: 35px;
-}
+  &__logo {
+    /* When we only set a height or width, the browser sets the width or height respectively */
+    height: 35px;
+  }
 
-.header__text-box {
-  position: absolute;
-  text-align: center;
+  &__text-box {
+    position: absolute;
+    text-align: center;
 
-  /* Center box in middle of parent <header> container. Note that top & left properties center the box starting from the top and left starting points of the child element. */
-  top: 50%;
-  left: 50%;
+    /* Center box in middle of parent <header> container. Note that top & left properties center the box starting from the top and left starting points of the child element. */
+    top: 50%;
+    left: 50%;
 
-  /* We need to center the container from its x-y center. So, we shift this using transform & translate. These values are no longer in relation to the parent element. They are relative to the element itself. */
-  transform: translate(-50%, -40%);
+    /* We need to center the container from its x-y center. So, we shift this using transform & translate. These values are no longer in relation to the parent element. They are relative to the element itself. */
+    transform: translate(-50%, -40%);
+  }
 }
 
 .heading-primary {
@@ -76,32 +77,32 @@ body {
   /* fix animation shake */
   backface-visibility: hidden;
   margin-bottom: 60px;
-}
 
-.heading-primary--main {
-  display: block;
-  font-size: 60px;
-  font-weight: 400;
-  letter-spacing: 35px;
+  &--main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
 
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
 
-  /* 
-      animation-delay: 3s; 
-      animation-iteration-count: 3;
-    */
-}
+    /* 
+        animation-delay: 3s; 
+        animation-iteration-count: 3;
+      */
+  }
 
-.heading-primary--sub {
-  display: block;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 17.4px;
+  &--sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
 
-  /* shorthand syntax */
-  animation: moveInRight 1s ease-out;
+    /* shorthand syntax */
+    animation: moveInRight 1s ease-out;
+  }
 }
 
 /* browsers are optimized to animate 2 properties: opacity & transform */
@@ -153,68 +154,70 @@ body {
   }
 }
 
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 15px 40px;
+.btn {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
 
-  /* remove overlap */
-  display: inline-block;
-  border-radius: 100px;
+    /* remove overlap */
+    display: inline-block;
+    border-radius: 100px;
 
-  /* transition is always applied on initial state and applies to all other states */
-  transition: all 0.2s;
+    /* transition is always applied on initial state and applies to all other states */
+    transition: all 0.2s;
 
-  /* since inline-block elements are treated like text, we use text-align: center on the parent element (.text-box) to center our button */
+    /* since inline-block elements are treated like text, we use text-align: center on the parent element (.text-box) to center our button */
 
-  position: relative;
+    position: relative;
 
-  backface-visibility: hidden;
-}
+    backface-visibility: hidden;
+  }
 
-.btn:hover {
-  /* tranlate Y goes from top to bottom in CSS (opposite of cartesian plane) */
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
+  &:hover {
+    /* tranlate Y goes from top to bottom in CSS (opposite of cartesian plane) */
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba($color-black, 0.2);
 
-.btn:active {
-  /* translation here is in relation to original state */
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      /* set opacity to 0 for fade-out */
+      opacity: 0;
+    }
+  }
 
-.btn--white {
-  background-color: $color-white;
-  color: $color-grey-dark;
-}
+  &:active {
+    /* translation here is in relation to original state */
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba($color-black, 0.2);
+  }
 
-.btn::after {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 100px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
 
-  transition: all 0.4s;
-}
+    &::after {
+      background-color: $color-white;
+    }
+  }
 
-.btn--white::after {
-  background-color: $color-white;
-}
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  /* set opacity to 0 for fade-out */
-  opacity: 0;
-}
+    transition: all 0.4s;
+  }
 
-.btn--animated {
-  animation: moveInBottom 0.5 ease-out 0.75s;
-  animation-fill-mode: backwards;
+  &--animated {
+    animation: moveInBottom 0.5 ease-out 0.75s;
+    animation-fill-mode: backwards;
+  }
 }
