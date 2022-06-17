@@ -1,21 +1,12 @@
-# Naturely - Adventures & Tours in the Great Outdoors
+# Natours
 
-## Project Description
+A landing page built with HTML and CSS using Sass, following Jonas Schmedtmann's [Advanced CSS & Sass Course](https://www.udemy.com/course/advanced-css-and-sass/) on Udemy.
 
-A website built with HTML & CSS, based on Jonas Schmedtmann's [Advanced CSS & Sass Course](https://www.udemy.com/course/advanced-css-and-sass/) on Udemy.
+## 💡 Topics & Learning Objectives
 
-The purpose of this project is to practice using modern CSS techniques and responsive design principles.
-
-### Course Topics & Learning Objectives
-
-- Tons of modern CSS techniques to create stunning designs and effects
-- How CSS works **_behind the scenes_**: the cascade, specificity, inheritance, etc.
-- **Flexbox layouts**: build a huge real-world project with flexbox
 - Using **Sass** in real-world projects: _global variables, architecting CSS, managing media queries,_ etc.
-- **Responsive images** in HTML and CSS for faster pageloads
-- The **NPM ecosystem**: development workflows and building processes
-- **Advanced CSS animations** with @keyframes, animation and transition
 - **CSS architecture**: component-based design, BEM, writing reusable code, etc.
-- **CSS Grid** layouts: build a huge real-world project with CSS Grid
+- **Responsive images** in HTML and CSS for faster pageloads
+- **Advanced CSS animations** with @keyframes, animation and transition
 - **Advanced responsive design**: media queries, mobile-first vs desktop-first, em vs rem units, etc.
-- SVG images, videos, and video effects in HTML and CSS
+- Understand how CSS works behind the scenes: the cascade, specificity, inheritance, etc.
